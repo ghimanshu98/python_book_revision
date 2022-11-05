@@ -22,11 +22,33 @@ class Contact:
         )
 
 
+class Friend(Contact):
+    # over riding initialization method of super class
+    # def __init__(self, name: str, email: str, phone: str) -> None:
+    #     self.name = name  
+    #     self.email = email
+    #     self.phone = phone
+        # duplicate code to set up email and name properties, which can be avoided by below syntax
 
+    def __init__(self, name: str, email: str, phone: str) -> None:
+        super().__init__(name, email)
+        self.phone =phone    
+    """
+    This example first binds the instance to the parent class using super() and
+    calls __init__() on that object, passing in the expected arguments. It then does
+    its own initialization, namely, setting the phone attribute, which is unique to the
+    Friend class."""
+
+
+
+
+
+
+    
 # test:
 
-p1 = Contact("Himanshu", "ghimanshu98@gmail.com")
-p2 = Contact("Sergio", "sergio@yahoo.com")
+# p1 = Contact("Himanshu", "ghimanshu98@gmail.com")
+# p2 = Contact("Sergio", "sergio@yahoo.com")
 
 # print(p1)
 # print(p2)
